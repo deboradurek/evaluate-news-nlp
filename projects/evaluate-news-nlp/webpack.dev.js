@@ -14,6 +14,7 @@ module.exports = {
   },
   devServer: {
     injectClient: false,
+    hotOnly: true,
   },
   module: {
     rules: [

@@ -3,43 +3,50 @@
   <head>
     <meta charset="utf-8" />
     <title>Test</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <header>
       <div class="">Logo</div>
+      <div><h1>Evaluate A News Article with NLP</h1></div>
       <div class="">navigation</div>
     </header>
 
     <main>
-      <section>
-        <form class="" onsubmit="return Client.handleSubmit(event)">
+      <section class="form-ctn">
+        <form>
+          <label for="url-to-analyse" class="subtitle"
+            >Enter the URL you want to analyse:</label
+          >
           <input
-            id="name"
+            id="url-to-analyse"
             type="text"
-            name="input"
-            value=""
-            onblur="onBlur()"
-            placeholder="Name"
+            name="input-url"
+            placeholder="Enter URL here."
           />
-          <input
-            type="submit"
-            name=""
-            value="submit"
-            onclick="return Client.handleSubmit(event)"
-            onsubmit="return Client.handleSubmit(event)"
-          />
+          <input id="btn-submit" type="submit" name="" value="Submit" />
         </form>
       </section>
 
-      <section>
-        <strong>Form Results:</strong>
-        <div id="results"></div>
+      <section class="results-ctn">
+        <h2 class="subtitle">Results:</h2>
+        <div id="results">
+          <div id="confidence"></div>
+          <div id="subjectivity"></div>
+          <div id="agreement"></div>
+          <div id="irony"></div>
+        </div>
       </section>
     </main>
 
     <footer>
-      <p>This is a footer</p>
+      <p>2021 Debora Durek - Udacity</p>
     </footer>
   </body>
 </html>

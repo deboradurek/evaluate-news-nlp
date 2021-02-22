@@ -1,12 +1,52 @@
-form {
-    border: 1px solid #545454;
-    border-radius: 3px;
-    padding: 40px;
+.form-ctn {
+  padding-top: 15px;
 }
 
-input {
-    padding: 5px 20px;
-    width: 100%;
-    line-height: 16px;
-    margin: 10px 0;
+form,
+.results-ctn {
+  background-color: #edc988;
+  border-radius: 12px;
+  padding: 40px;
+}
+
+.subtitle {
+  font-weight: bold;
+  font-size: 1.3rem;
+  color: #132743;
+}
+
+#url-to-analyse,
+#results {
+  background-color: #f8efd4;
+  padding: 14px 20px;
+  width: 100%;
+  line-height: 2.2rem;
+  margin: 40px 0 20px;
+  border-radius: 5px;
+  border: none;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 1rem;
+  color: #132743;
+}
+
+#btn-submit {
+  border: none;
+  border-radius: 20px;
+  background-color: #d7385e;
+  display: flex;
+  margin: 0 auto;
+  padding: 14px 40px;
+  font-family: 'Oxygen', sans-serif;
+  font-size: 1.1rem;
+  color: #f8efd4;
+  cursor: pointer;
+}
+
+#btn-submit:focus,
+input:focus {
+  outline: none;
+}
+
+#btn-submit:hover {
+  background-color: #e6496e;
 }
