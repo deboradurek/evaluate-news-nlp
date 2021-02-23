@@ -21,20 +21,13 @@
     <main>
       <section class="form-ctn">
         <form>
-          <label for="url-to-analyse" class="subtitle"
-            >Enter the URL you want to analyse:</label
-          >
-          <input
-            id="url-to-analyse"
-            type="text"
-            name="input-url"
-            placeholder="Enter URL here."
-          />
+          <label for="url-to-analyse" class="subtitle">Enter the URL you want to analyse:</label>
+          <input id="url-to-analyse" type="text" name="input-url" placeholder="Enter URL here." />
           <input id="btn-submit" type="submit" name="" value="Submit" />
         </form>
       </section>
 
-      <section class="results-ctn">
+      <section id="results-ctn" class="display-result-none">
         <h2 class="subtitle">Results:</h2>
         <div id="results">
           <div id="confidence"></div>

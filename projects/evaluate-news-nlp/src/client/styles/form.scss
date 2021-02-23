@@ -2,11 +2,18 @@
   padding-top: 15px;
 }
 
-form,
-.results-ctn {
+section {
   background-color: #edc988;
   border-radius: 12px;
   padding: 40px;
+}
+
+.display-result-none {
+  display: none;
+}
+
+.display-result-block {
+  display: block;
 }
 
 .subtitle {
@@ -49,4 +56,9 @@ input:focus {
 
 #btn-submit:hover {
   background-color: #e6496e;
+}
+
+#btn-submit:disabled {
+  background-color: #8a8a8a;
+  cursor: progress;
 }
