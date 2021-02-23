@@ -19,7 +19,7 @@
     </header>
 
     <main>
-      <section class="form-ctn">
+      <section>
         <form>
           <label for="url-to-analyse" class="subtitle">Enter the URL you want to analyse:</label>
           <input id="url-to-analyse" type="text" name="input-url" placeholder="Enter URL here." />
@@ -41,5 +41,15 @@
     <footer>
       <p>2021 Debora Durek - Udacity</p>
     </footer>
+
+    <script>
+      // Check that service workers are supported
+      if ('serviceWorker' in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js');
+        });
+      }
+    </script>
   </body>
 </html>
