@@ -41,11 +41,13 @@ app.post('/analyse', postData);
 function postData(req, res) {
   const { dataURL } = req.body;
   requestAnalyseWebAPI(dataURL).then((dataAPI) => {
+    const { confidence, subjectivity, agreement, irony } = dataAPI;
+
     const parsedData = {
-      confidence: dataAPI.confidence,
-      subjectivity: dataAPI.subjectivity,
-      agreement: dataAPI.agreement,
-      irony: dataAPI.irony,
+      confidence,
+      subjectivity,
+      agreement,
+      irony,
     };
     res.send(parsedData);
   });
