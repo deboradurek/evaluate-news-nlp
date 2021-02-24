@@ -1,37 +1,39 @@
-# Front End Nanodegree Program
+# Project Introduction
 
-Front End Nanodegree Content & Project Resources
+This project is part of the requirements for the Front End Web Developer Nanodegree Program, by Udacity.
 
-## Table of Contents
+The goal of this project is to provide practice with:
 
-* [Projects](#projects)
-* [Courses](#courses)
-* [Style-Guide](#style-guide)
+- Setting up Webpack
+- Sass styles
+- Webpack Loaders and Plugins
+- Creating layouts and page design
+- Service workers
+- Using APIs and creating requests to external urls
 
-## Projects
+This project is a web tool that allows users to run NLP (Natural Language Processing) on articles or blogs found on other websites, being able to analyse the sentiment of the information available in the source.
+It uses **"MeaningCloud Sentiment Analysis API"**, an external WebAPI that provides such information.
 
-The following is a list of current projects required to complete the Front End Nanodegree.
+> Natural language processing (NLP) is a subfield of computer science, information engineering, and artificial intelligence
+> concerned with the interactions between computers and human (natural) languages, in particular how to program computers to
+> process and analyze large amounts of natural language data.
 
-Note that projects that do not include associated starter code are not linked here.
+## Getting Started
 
-1. Personal Blog Website
-2. [Landing Page](https://github.com/udacity/fend/tree/refresh-2019/projects/landing-page)
-3. [Weather Journal App](https://github.com/udacity/fend/tree/refresh-2019/projects/weather-journal-app)
-4. [Evaluate A News Article with Natural Language Processing](https://github.com/udacity/fend/tree/refresh-2019/projects/evaluate-news-nlp)
-5. Capstone - Travel App
+Follow the important steps bellow in order to have the project running in the correct mode:
 
-## Courses
+- Install all project dependencies: `$ npm install`
 
-The following is a list of the courses associated with the Front End Nanodegree.
+- Build project using production mode: `$ npm run build-prod`;
+  _or_
+- Build project using development mode: `$ npm run build-dev`;
+  _or_
+- Run project using development mode on webpack server: `$ npm run dev`;
 
-* C1 - CSS, Website Layout, Website Components
-* C2 - JavaScript & The DOM
-* C3 - Web API's and Asynchronous Applications
-* C4 - Build Tools and Single Page Web Apps
-* C5 - Capstone
+- Start the server: `$ npm run start`
 
-## Style-Guide
+## Testing the Code
 
-See below for the Udacity Style Guide used thoroughout the Front End Nanodegree.
+You can also run tests for javascript files on the client side. To do this, do the following:
 
-* [Nanodegree Style Guide](http://udacity.github.io/frontend-nanodegree-styleguide/)
+- Run tests using jest: `$ npm run test`
