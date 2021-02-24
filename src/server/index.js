@@ -35,25 +35,31 @@ app.get('/test', function (req, res) {
   res.send(mockAPIResponse);
 });
 
-// POST Route
+/* Start POST Route */
 app.post('/analyse', postData);
 
+// URL is received by the server endpoint
 function postData(req, res) {
   const { dataURL } = req.body;
-  requestAnalyseWebAPI(dataURL).then((dataAPI) => {
-    const { confidence, subjectivity, agreement, irony } = dataAPI;
 
-    const parsedData = {
-      confidence,
-      subjectivity,
-      agreement,
-      irony,
-    };
-    res.send(parsedData);
-  });
+  // Call function that GETs URL Analysis from external WebAPI
+  requestAnalyseWebAPI(dataURL)
+    // Parse data as desired and send it to client side
+    .then((dataAPI) => {
+      const { confidence, subjectivity, agreement, irony } = dataAPI;
+
+      const parsedData = {
+        confidence,
+        subjectivity,
+        agreement,
+        irony,
+      };
+      res.send(parsedData);
+    });
 }
+/* End POST Route */
 
-// Function to GET Analysis, it points to external WebAPI
+// Function to GET Analysis, pointing to external WebAPI
 const requestAnalyseWebAPI = async (dataURL) => {
   const urlAPI = 'https://api.meaningcloud.com/sentiment-2.1';
   const meaningCloudKey = process.env.API_KEY;

@@ -1,30 +1,37 @@
 // Event Listener to Form
 document.querySelector('form').addEventListener('submit', handleSubmit);
 
+/* Start Main function that retrieves data after submit button is clicked */
 function handleSubmit(event) {
   event.preventDefault();
 
+  // Get typed URL
   const dataURL = document.getElementById('url-to-analyse').value;
 
-  //   Check if a valid URL was put into the form field
+  // Validate if URL is valid
   if (Client.checkForURL(dataURL)) {
     // Change button display attributes for process of loading
     const buttonSubmit = document.getElementById('btn-submit');
     buttonSubmit.setAttribute('disabled', true);
     buttonSubmit.setAttribute('value', 'Loading...');
-    // Send URL and Update UI
-    requestAnalyseURL({ dataURL }).then((parsedData) => {
-      updateUI(parsedData);
-      // Change button display attributes back to original
-      buttonSubmit.removeAttribute('disabled');
-      buttonSubmit.setAttribute('value', 'Submit');
-    });
+
+    // Send URL to server endpoint
+    requestAnalyseURL({ dataURL })
+      // Update UI
+      .then((parsedData) => {
+        updateUI(parsedData);
+
+        // Change button display attributes back to original
+        buttonSubmit.removeAttribute('disabled');
+        buttonSubmit.setAttribute('value', 'Submit');
+      });
   } else {
     alert('Invalid URL. Please try again!');
   }
 }
+/* End Main function that retrieves data after submit button is clicked */
 
-// Function to POST URL, points to local server
+// Function to POST URL, pointing to local server
 const requestAnalyseURL = async (data = {}) => {
   const response = await fetch('http://localhost:8081/analyse', {
     method: 'POST',
@@ -45,10 +52,9 @@ const requestAnalyseURL = async (data = {}) => {
 
 // Function to Update UI with retrieved WebAPI data
 function updateUI(parsedData) {
-  // Update display for results container
+  // Show results container that was not displayed
   document.getElementById('results-ctn').classList.remove('display-result-none');
   document.getElementById('results-ctn').classList.add('display-result-block');
-
   // Update results container with data
   document.getElementById(
     'confidence'
